@@ -1,0 +1,55 @@
+from tkinter import *
+from tkinter import messagebox
+from cryptography.fernet import Fernet
+
+
+def save_and_encrypt():
+    title_str = entry1.get()
+    master_key_str = entry2.get()
+    secret_str = text1.get("1.0", END)
+
+    if len(title_str) == 0:
+        messagebox.showerror(title="Error!", message= "Please enter the title")
+    elif len(master_key_str) == 0:
+        messagebox.showerror(title="Error!", message="Please enter the password")
+    elif len(secret_str) == 0:
+        messagebox.showerror(title="Error", message="Please enter the Secret Text")
+    else:
+        pass
+
+
+secretNote = Tk()
+secretNote.title("Cipher Note")
+secretNote.config(padx=10, pady=10)
+
+photoImage = PhotoImage(file= "logo.png")
+
+logoLabel = Label(secretNote, image= photoImage )
+logoLabel.pack()
+
+label1 = Label(secretNote, text="Enter your title")
+label1.pack()
+
+entry1 = Entry(secretNote, width= 20)
+entry1.pack()
+
+label2 = Label(secretNote, text="Enter your secret note!")
+label2.pack()
+
+text1 = Text(secretNote, width=30, height=10)
+text1.pack()
+
+label3 = Label(secretNote, text="Enter your master key!")
+label3.pack()
+
+entry2 = Entry(secretNote, width= 20, show="*")
+entry2.pack()
+
+button1 = Button(secretNote, text="Save & Encrypt", command=save_and_encrypt)
+button1.pack()
+
+button2 = Button(secretNote, text="Decrypt")
+button2.pack()
+
+
+secretNote.mainloop()
