@@ -1,6 +1,8 @@
 from tkinter import *
 from tkinter import messagebox
 from cryptography.fernet import Fernet
+import hashlib
+import base64
 
 
 def save_and_encrypt():
@@ -15,7 +17,19 @@ def save_and_encrypt():
     elif len(secret_str) == 0:
         messagebox.showerror(title="Error", message="Please enter the Secret Text")
     else:
-        pass
+        password_bytes = master_key_str.encode('utf-8')
+        hashed_password = hashlib.sha256(password_bytes).digest()
+        fernet_key = base64.urlsafe_b64encode(hashed_password)
+        cipher_suite = Fernet(fernet_key)
+        encrypted_secret = cipher_suite.encrypt(secret_str.encode('utf-8'))
+
+    with open ("cipherText", "a") as f:
+        f.write(title_str + "\n")
+        f.write(encrypted_secret.decode('utf-8' ) + "\n")
+
+    entry1.delete(0, END)
+    entry2.delete(0, END)
+    text1.delete("1.0", END)
 
 
 secretNote = Tk()
