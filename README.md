@@ -13,10 +13,16 @@ This repository documents my transition from **Industrial Engineering** to **Sof
 ### 1. Data Integrations & API Handling
 *Real-world data fetching, parsing, and asynchronous processing.*
 
+* **📊 Automated Sales Reporter:**
+    * **What it does:** An ETL pipeline that processes raw Excel sales data, calculates financial metrics, and generates visual reports.
+    * **Engineering approach:** Features **Logging mechanism** for process monitoring, modular function design, and error handling.
+    * **Tech:** `Pandas`, `Matplotlib`, `Logging`.
+    
 * **🪐 Orbital Sentry (NASA API):**
     * **What it does:** Fetches real-time Near-Earth Object (NEO) data from NASA, filters hazardous asteroids, and visualizes threats.
     * **Engineering approach:** Implemented **Multithreading** to prevent UI freezing during API calls. Uses structured Exception Handling for network reliability.
     * **Tech:** `requests`, `threading`, `json`, `Tkinter`.
+    
 * **Weather CLI Tool:**
     * **What it does:** A command-line interface tool that queries weather APIs and parses JSON responses for specific cities.
     * **Tech:** `requests`, `CLI interaction`.
