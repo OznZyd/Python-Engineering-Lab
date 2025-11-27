@@ -46,6 +46,7 @@ This repository documents my transition from **Industrial Engineering** to **Sof
 * **Libraries:** Pandas (Learning), Requests, Tkinter, Turtle, Cryptography.
 * **Core Concepts:** OOP, Multithreading, JSON Parsing, REST APIs, Data Security.
 
+
 ## 👨‍💻 Author
-**Ozan Zeydanoglu** - *Engineering Student & Production Professional*
-*Open for internships and junior roles in Data Analysis & Python Development.*
+**Ozan Zeydanoglu** - *Engineering Professional & Developer*
+*Bridging engineering discipline with Software Development. Open to professional challenges in Engineering IT, Automation, and Data Solutions.*
