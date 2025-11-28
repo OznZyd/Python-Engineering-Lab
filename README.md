@@ -2,7 +2,7 @@
 
 > **"Turning logic into functional tools."**
 
-This repository documents my transition from **Industrial Engineering** to **Software Development & Data Analysis**. It contains practical implementations of algorithms, data fetching pipelines, security protocols, and mathematical visualizations.
+TThis repository demonstrates the application of **Engineering Principles** to **Software Development & Data Analysis**. It features practical implementations of algorithms, automated data pipelines, security protocols, and mathematical visualizations.
 
 **Current Focus:** Building robust, data-driven applications while mastering Python's ecosystem.
 
