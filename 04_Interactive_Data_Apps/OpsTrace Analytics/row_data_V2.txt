@@ -1,0 +1,16 @@
+2024-12-12T09:00:01.123-05:00,LINK,PING,,GatewayCheck,Status=Active,Latency=15ms
+2024-12-12T09:00:02.456-05:00,LINK,DATA,,PayloadTransfer,ID=9901,Ack=Received
+2024-12-12T09:05:10.789-05:00,SENS,RPM,Motor_A1,ConveyorSpeed,Target=1200,Actual=1198
+2024-12-12T09:05:11.112-05:00,SENS,TEMP,Motor_A1,OverheatCheck,Value=42C,Limit=60C
+2024-12-12T09:10:15.333-05:00,FLOW,ENTRY,Scanner_01,Item_A8899,Type=Box,Dest=Zone_Red
+2024-12-12T09:10:16.444-05:00,FLOW,ENTRY,Scanner_01,Item_B7766,Type=Parcel,Dest=Zone_Blue
+2024-12-12T09:12:20.555-05:00,FLOW,SORT,Diverter_05,Item_A8899,Lane=2,Action=Divert
+2024-12-12T09:12:21.666-05:00,FLOW,SORT,Diverter_06,Item_B7766,Lane=4,Action=Pass
+2024-12-12T09:15:30.777-05:00,FLOW,MISS,Tracker_X,Item_C5544,LastZone=Zone_Red,Error=Gap
+2024-12-12T09:20:40.999-05:00,AUTO,EXEC,,,Rule=WeightCheck,Input=12kg,Output=Pass
+2024-12-12T09:20:41.000-05:00,AUTO,EXEC,,,Rule=DimCheck,Input=50x50,Output=Reject
+2024-12-12T09:30:00.111-05:00,STATE,INFO,Main_Server,HealthCheck,CPU=45%,RAM=60%
+2024-12-12T09:35:05.222-05:00,CORE,BOOT,,,KernelStart,Ver=3.1.4,Mode=Production
+2024-12-12T09:40:10.333-05:00,ALERT,WARN,Sensor_Z1,BlockageDetected,Duration=5s
+2024-12-12T09:45:15.444-05:00,ALERT,CRIT,Motor_A1,ThermalShutdown,Temp=85C
+2022-05-20T14:00:00.000+02:00,FLOW,OLD,Archive,LegacyData,Test=True
