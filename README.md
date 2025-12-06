@@ -2,7 +2,7 @@
 
 > **"Turning logic into functional tools."**
 
-TThis repository demonstrates the application of **Engineering Principles** to **Software Development & Data Analysis**. It features practical implementations of algorithms, automated data pipelines, security protocols, and mathematical visualizations.
+This repository demonstrates the application of **Engineering Principles** to **Software Development & Data Analysis**. It features practical implementations of algorithms, automated data pipelines, security protocols, and mathematical visualizations.
 
 **Current Focus:** Building robust, data-driven applications while mastering Python's ecosystem.
 
@@ -45,12 +45,20 @@ TThis repository demonstrates the application of **Engineering Principles** to *
     * **What it does:** An interactive reflex simulation.
     * **Engineering approach:** Manages recursive timer loops and event listeners (`onclick`) to handle real-time state changes.
 
+### 4. Interactive Data Apps (Streamlit)
+*Full-stack data applications with web interfaces and secure logic.*
+
+* **🕵️‍♂️ OpsTrace Analytics:**
+    * **What it does:** An industrial-grade log analysis platform that merges, cleans, and visualizes scattered log files. Features a secure login system and advanced time-series filtering.
+    * **Engineering approach:** Implemented **Session State** for security, **Multi-file ETL pipeline** with `pd.concat`, and **Chained Filtering Logic** for drill-down analysis.
+    * **Tech:** `Streamlit`, `Pandas`, `Datetime`, `SessionState`.
+
 ---
 
 ## 🛠 Tech Stack & Tools
 * **Languages:** Python 3.x
-* **Libraries:** Pandas (Learning), Requests, Tkinter, Turtle, Cryptography.
-* **Core Concepts:** OOP, Multithreading, JSON Parsing, REST APIs, Data Security.
+* **Libraries:** Pandas (Learning), Requests, Tkinter, Turtle, Cryptography, Streamlit.
+* **Core Concepts:** OOP, Multithreading, JSON Parsing, REST APIs, Data Security, ETL Pipelines.
 
 
 ## 👨‍💻 Author
