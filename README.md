@@ -48,10 +48,12 @@ This repository demonstrates the application of **Engineering Principles** to **
 ### 4. Interactive Data Apps (Streamlit)
 *Full-stack data applications with web interfaces and secure logic.*
 
-* **🕵️‍♂️ OpsTrace Analytics:**
-    * **What it does:** An industrial-grade log analysis platform that merges, cleans, and visualizes scattered log files. Features a secure login system and advanced time-series filtering.
-    * **Engineering approach:** Implemented **Session State** for security, **Multi-file ETL pipeline** with `pd.concat`, and **Chained Filtering Logic** for drill-down analysis.
-    * **Tech:** `Streamlit`, `Pandas`, `Datetime`, `SessionState`.
+* **🕵️‍♂️ OpsTrace Analytics (v2.0):**
+
+    * **What it does:** An industrial-grade log analysis platform. Automatically merges scattered log files, provides a secure login system, and enables millisecond-level filtering on massive datasets.
+    
+    * **Engineering approach:** Built on a robust **ETL Pipeline** optimized with **Performance Caching** (`@st.cache_data`). Features **Global Search Logic**, **Session Security**, and a complete **Windows Deployment Strategy** (.bat scripts).
+    * **Tech:** `Streamlit`, `Pandas`, `AgGrid`, `SessionState`.
 
 ---
 
