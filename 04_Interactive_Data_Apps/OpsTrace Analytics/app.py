@@ -31,7 +31,7 @@ def local_all_data(files):
     dt = dt.dropna(axis=1, how='all')
 
     dt["Time"] = dt["Time"].astype(str).str.strip()
-    dt["Time"] = pd.to_datetime(dt["Time"], errors='coerce', utc=True)
+    dt["Time"] = pd.to_datetime(dt["Time"], errors='coerce').dt.tz_localize(None)
 
     for clm in dt.columns:
         if dt[clm].dtype == 'object':
@@ -119,9 +119,9 @@ if update_files:
             dc = dt["Category"].unique().tolist()
             selected_cat = st.multiselect("Selected Category", dc)
 
-        if "SubCategory" in dt.columns:
-            dt["SubCategory"] = dt["SubCategory"].str.strip()
-            ds = dt["SubCategory"].unique().tolist()
+        if "Sub-Category" in dt.columns:
+            dt["Sub-Category"] = dt["Sub-Category"].str.strip()
+            ds = dt["Sub-Category"].unique().tolist()
             selected_subct = st.multiselect("Selected Sub-Category", ds)
 
         if "Zone" in dt.columns:
@@ -193,7 +193,7 @@ if update_files:
     if selected_cat:
         dt = dt[dt["Category"].isin(selected_cat)]
     if selected_subct:
-        dt = dt[dt["SubCategory"].isin(selected_subct)]
+        dt = dt[dt["Sub-Category"].isin(selected_subct)]
     if selected_zone:
         dt = dt[dt["Zone"].isin(selected_zone)]
     if selected_mc:
@@ -209,6 +209,7 @@ if update_files:
     if selected_statuses:
         dt = dt[dt["Divert Status"].isin(selected_statuses)]
 
+    dt["Time"] = dt["Time"].dt.strftime('%Y-%m-%d %H:%M:%S:%f')
 
     csv_data = convert_df(dt)
 
@@ -224,10 +225,20 @@ if update_files:
 
 
     builder = GridOptionsBuilder.from_dataframe(dt.head(display_limit))
+
     builder.configure_default_column(
         groupable=True, value=True, enableRowGroup=True, aggFunc='sum', editable=True,
         filter=True, sortable=True, minWidth=150, floatingFilter=True
     )
+
+    builder.configure_grid_options(
+
+        enableRangeSelection=True,
+        enableRangeHandle=True,
+        clipboardDeliminator=','
+
+    )
+
     builder.configure_side_bar()
     grid_options = builder.build()
 
@@ -236,7 +247,7 @@ if update_files:
         gridOptions=grid_options,
         height=800,
         fit_columns_on_grid_load=False,
-        enable_enterprise_modules=False,
+        enable_enterprise_modules=True,
         update_mode=GridUpdateMode.NO_UPDATE,
         allow_unsafe_jscode=True
     )
